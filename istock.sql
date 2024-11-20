@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2024 at 10:43 AM
+-- Generation Time: Nov 20, 2024 at 10:42 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -501,7 +501,9 @@ INSERT INTO `activity_log` (`activity_id`, `user_id`, `role`, `activity`, `actio
 (451, 12, 'Cashier', 'Logged In', 'LOGIN', '{}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', '1732005270'),
 (452, 12, 'Cashier', 'Updated an existing product. Returned 2 unit(s)', 'UPDATE', '{\"product_id\":\"15\",\"quantity_returned\":\"2\"}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', '1732008941'),
 (453, 12, 'Cashier', 'Logged Out', 'LOG OUT', '{}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', '1732009243'),
-(454, 4, 'Admin', 'Logged In', 'LOGIN', '{}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', '1732009252');
+(454, 4, 'Admin', 'Logged In', 'LOGIN', '{}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', '1732009252'),
+(455, 4, 'Admin', 'Logged Out', 'LOG OUT', '{}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', '1732121158'),
+(456, 1, 'Super Admin', 'Logged In', 'LOGIN', '{}', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0', '1732121163');
 
 -- --------------------------------------------------------
 
@@ -533,25 +535,25 @@ CREATE TABLE `invoices` (
 --
 
 INSERT INTO `invoices` (`invoice_id`, `store_id`, `cashier_id`, `invoice_uuid`, `invoice_customer_name`, `invoice_gross_total`, `total_invoice_vat_rate`, `total_invoice_vat`, `total_invoice_discount_rate`, `total_invoice_discount`, `invoice_net_total`, `invoice_paid_amount`, `invoice_due`, `invoice_payment_method`, `invoice_order_timestamp`, `invoice_status`) VALUES
-(13, 5, 1, 'fdac7388-8e2b-4e63-a36b-652fc451e8b7', 'Ekene Omera', 440000, 0, 0, 0, 0, 440000, 440000, 0, 'Cash Payment', '1655388559', 'Paid'),
-(15, 3, 1, '89efc21a-7316-4cef-a964-d6e28ea925ba', 'Ekene Omera', 325500, 0, 0, 0, 0, 325500, 326000, 500, 'Bank Transfer', '1655389318', 'Paid'),
-(16, 3, 1, '3f97f486-1144-4c7d-aa73-f23b62800b92', 'Uchechukwu Udo', 38500, 0, 0, 0, 0, 38500, 39000, 500, 'Cash Payment', '1655389365', 'Paid'),
-(17, 7, 1, '1cb8eae6-5159-4e85-b365-a8c16ae496a2', 'Emeka Ujali', 22500, 0, 0, 0, 0, 22500, 23000, 500, 'Cash Payment', '1656291824', 'Paid'),
-(18, 7, 1, '0bd6acfe-a619-4f7e-9829-3009eaec78c9', 'Onyii', 9000, 0, 0, 0, 0, 9000, 9000, 0, 'Bank Transfer', '1656291893', 'Paid'),
-(20, 7, 4, '395a072b-9a7c-44c8-9154-4221cad05175', 'Emeka Ujali', 6900, 0, 0, 0, 0, 6900, 7000, 100, 'Cash Payment', '1656327421', 'Paid'),
-(21, 7, 6, 'de654344-5207-405a-ae3e-9a2a49e037d4', 'Onyii', 529000, 0, 0, 0, 0, 529000, 529000, 0, 'Bank Transfer', '1656536856', 'Paid'),
-(22, 8, 1, '9c239985-e039-4197-806a-e160adffdfa2', '', 117600, 0, 0, 0, 0, 117600, 120000, 2400, 'Cash Payment', '1657124559', 'Paid'),
-(23, 7, 4, '57bd04ef-483b-4084-a703-5459e88ba6fe', 'Hiacenth', 15100, 0, 0, 0, 0, 15100, 16000, 900, 'Cash Payment', '1657676217', 'Paid'),
-(24, 7, 7, 'fb6024a8-76d1-4acc-b331-dd82427ef0f6', 'Chikezie Uma', 32000, 0, 0, 0, 0, 32000, 32000, 0, 'Bank Transfer', '1657677413', 'Paid'),
-(25, 8, 1, 'e1933b4b-3e0c-46ec-adef-0ec617b49a07', 'Onyii', 9800, 0, 0, 0, 0, 9800, 9800, 0, 'Cash Payment', '1658627484', 'Paid'),
-(27, 8, 1, '24371b7c-df97-4749-9ab0-ef5f656a4b81', 'Uchechukwu Udo', 19600, 0, 0, 0, 0, 19600, 20000, 400, 'Cash Payment', '1658628048', 'Paid'),
-(28, 7, 7, 'b59155c0-cfa4-47c2-98fc-b5cab5dd8ff0', 'Emeka Ujali', 6400, 1.1, 70.4, 0, 0, 6470.4, 6500, 29.6, 'Card Payment', '1665142846', 'Paid'),
-(45, 5, 1, 'cbec96a3-f456-4ffd-85cf-985866c3fc53', '', 750000, 0.5, 3750, 0, 0, 753750, 755000, 1250, 'Cash Payment', '1665680904', 'Paid'),
-(46, 5, 1, 'ad9679e9-df56-4eaf-bbab-69407631198a', 'Chibuikem Josephine Chikodi', 750000, 0.5, 3750, 0, 0, 753750, 755000, 1250, 'Card Payment', '1665681313', 'Paid'),
-(47, 5, 1, '0b61e60b-c362-4e73-add9-808a7643da92', 'Chibuikem Josephine Chikodi', 750000, 0.5, 3750, 0, 0, 753750, 755000, 1250, 'Cash Payment', '1665682224', 'Paid'),
-(48, 5, 1, '4d6e7a8b-fd58-4353-add2-95788813fedc', 'Onyii', 750000, 0.5, 3750, 0, 0, 753750, 755000, 1250, 'Card Payment', '1665713614', 'Paid'),
-(49, 7, 4, '21980253-1432-4176-a9b3-c5c6e12bb6de', 'Ekene Omera', 340000, 0.5, 850, 0, 0, 340850, 341000, 150, 'Card Payment', '1665718522', 'Paid'),
-(50, 7, 8, 'ef66baff-ba46-4d5d-82e2-e3c5ac7fd4e3', 'Emeka', 170000, 0.5, 850, 0, 0, 170850, 171000, 150, 'Cash Payment', '1665719643', 'Paid'),
+(13, 5, 1, 'fdac7388-8e2b-4e63-a36b-652fc451e8b7', 'Ekene Omera', 440000, 0, 0, 0, 0, 440000, 440000, 0, 'Cash Payment', '1727740800', 'Paid'),
+(15, 3, 1, '89efc21a-7316-4cef-a964-d6e28ea925ba', 'Ekene Omera', 325500, 0, 0, 0, 0, 325500, 326000, 500, 'Bank Transfer', '1727827200', 'Paid'),
+(16, 3, 1, '3f97f486-1144-4c7d-aa73-f23b62800b92', 'Uchechukwu Udo', 38500, 0, 0, 0, 0, 38500, 39000, 500, 'Cash Payment', '1727913600', 'Paid'),
+(17, 7, 1, '1cb8eae6-5159-4e85-b365-a8c16ae496a2', 'Emeka Ujali', 22500, 0, 0, 0, 0, 22500, 23000, 500, 'Cash Payment', '1728172800', 'Paid'),
+(18, 7, 1, '0bd6acfe-a619-4f7e-9829-3009eaec78c9', 'Onyii', 9000, 0, 0, 0, 0, 9000, 9000, 0, 'Bank Transfer', '1728259200', 'Paid'),
+(20, 7, 4, '395a072b-9a7c-44c8-9154-4221cad05175', 'Emeka Ujali', 6900, 0, 0, 0, 0, 6900, 7000, 100, 'Cash Payment', '1728432000', 'Paid'),
+(21, 7, 6, 'de654344-5207-405a-ae3e-9a2a49e037d4', 'Onyii', 529000, 0, 0, 0, 0, 529000, 529000, 0, 'Bank Transfer', '1728518400', 'Paid'),
+(22, 8, 1, '9c239985-e039-4197-806a-e160adffdfa2', '', 117600, 0, 0, 0, 0, 117600, 120000, 2400, 'Cash Payment', '1728604800', 'Paid'),
+(23, 7, 4, '57bd04ef-483b-4084-a703-5459e88ba6fe', 'Hiacenth', 15100, 0, 0, 0, 0, 15100, 16000, 900, 'Cash Payment', '1728691200', 'Paid'),
+(24, 7, 7, 'fb6024a8-76d1-4acc-b331-dd82427ef0f6', 'Chikezie Uma', 32000, 0, 0, 0, 0, 32000, 32000, 0, 'Bank Transfer', '1728864000', 'Paid'),
+(25, 8, 1, 'e1933b4b-3e0c-46ec-adef-0ec617b49a07', 'Onyii', 9800, 0, 0, 0, 0, 9800, 9800, 0, 'Cash Payment', '1728950400', 'Paid'),
+(27, 8, 1, '24371b7c-df97-4749-9ab0-ef5f656a4b81', 'Uchechukwu Udo', 19600, 0, 0, 0, 0, 19600, 20000, 400, 'Cash Payment', '1729036800', 'Paid'),
+(28, 7, 7, 'b59155c0-cfa4-47c2-98fc-b5cab5dd8ff0', 'Emeka Ujali', 6400, 1.1, 70.4, 0, 0, 6470.4, 6500, 29.6, 'Card Payment', '1729123200', 'Paid'),
+(45, 5, 1, 'cbec96a3-f456-4ffd-85cf-985866c3fc53', '', 750000, 0.5, 3750, 0, 0, 753750, 755000, 1250, 'Cash Payment', '1729209600', 'Paid'),
+(46, 5, 1, 'ad9679e9-df56-4eaf-bbab-69407631198a', 'Chibuikem Josephine Chikodi', 750000, 0.5, 3750, 0, 0, 753750, 755000, 1250, 'Card Payment', '1729296000', 'Paid'),
+(47, 5, 1, '0b61e60b-c362-4e73-add9-808a7643da92', 'Chibuikem Josephine Chikodi', 750000, 0.5, 3750, 0, 0, 753750, 755000, 1250, 'Cash Payment', '1729382400', 'Paid'),
+(48, 5, 1, '4d6e7a8b-fd58-4353-add2-95788813fedc', 'Onyii', 750000, 0.5, 3750, 0, 0, 753750, 755000, 1250, 'Card Payment', '1729468800', 'Paid'),
+(49, 7, 4, '21980253-1432-4176-a9b3-c5c6e12bb6de', 'Ekene Omera', 340000, 0.5, 850, 0, 0, 340850, 341000, 150, 'Card Payment', '1729641600', 'Paid'),
+(50, 7, 8, 'ef66baff-ba46-4d5d-82e2-e3c5ac7fd4e3', 'Emeka', 170000, 0.5, 850, 0, 0, 170850, 171000, 150, 'Cash Payment', '1729728000', 'Paid'),
 (51, 7, 5, 'quMEDM', 'Joshua Akash', 170000, 0.5, 850, 0, 0, 170850, 170850, 0, 'Card Payment', '1730526443', 'Paid'),
 (52, 12, 1, '9WYcDd', 'Onome Chris', 4600, 0, 0, 0, 0, 4600, 2500, -2100, 'Cash Payment', '1730580767', 'Incomplete Payment'),
 (53, 13, 1, 'ixYcH5', 'Ujunwa Obiaju', 6, 0, 0, 0, 0, 6, 6, 0, 'Cash Payment', '1730764150', 'Paid'),
@@ -642,16 +644,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `store_id`, `product_category_id`, `product_brand_id`, `product_name`, `product_slug`, `product_cost_price`, `product_price`, `product_stock`, `product_measuring_units`, `product_reorder_level`, `product_vat_rate`, `product_expiry_discount_rate`, `product_expiry_date`, `product_discount_rate`, `product_created_at`, `product_status`, `price_reduced`) VALUES
-(1, 5, 1, 3, 'LG High-tops Fridge', 'lg-high-tops-fridge', 200000, 220000, 10, 'Kg', 2, 0, 0, NULL, 0, '1654746818', 'Active', 0),
-(3, 3, 1, 3, 'Smart TV', 'smart-tv', 121000, 123000, 22, 'Kg', 4, 0, 0, NULL, 0, '1654770633', 'Active', 0),
-(4, 3, 1, 3, 'Zerox Blender (LG)', 'zerox-blender-lg', 19500, 20500, 8, 'Kg', 4, 1, 0, NULL, 0, '1654907602', 'Active', 0),
-(5, 3, 1, 2, 'Home Theatre (Samsung)', 'home-theatre-samsung', 16500, 18000, 6, 'Kg', 2, 0, 0, NULL, 0, '1654907658', 'Active', 0),
-(6, 7, 2, 5, 'Layers Birds', 'layers-birds', 3100, 4500, 2495, 'Kg', 100, 0, 0, NULL, 0, '1656291582', 'Active', 0),
-(7, 7, 2, 5, 'Old Layers', 'old-layers', 2050, 2300, 1818, 'Kg', 100, 0, 0, NULL, 0, '1656325735', 'Active', 0),
-(8, 8, 3, 6, 'Oraimo Power Bank', 'oraimo-power-bank', 8800, 9800, 10, 'Kg', 12, 0, 0, NULL, 0, '1657124404', 'Active', 0),
-(9, 7, 3, 6, 'Bluetooth', 'bluetooth', 4550, 6400, 70, 'Kg', 13, 0, 0, NULL, 0, '1657676074', 'Active', 0),
-(10, 5, 3, 2, 'Samsung Galaxy S3', 'samsung-galaxy-s3', 560000, 750000, 21, 'Packs', 4, 0.5, 0, NULL, 0, '1658384455', 'Active', 0),
-(11, 7, 1, 3, 'Hisense LED Smart TV', 'hisense-led-smart-tv', 155000, 170000, 9, 'Carton', 3, 0.5, 0, NULL, 0, '1665717522', 'Active', 0),
+(1, 5, 1, 3, 'LG High-tops Fridge', 'lg-high-tops-fridge', 200000, 220000, 10, 'Kg', 2, 0, 0, NULL, 0, '1729728000', 'Active', 0),
+(3, 3, 1, 3, 'Smart TV', 'smart-tv', 121000, 123000, 22, 'Kg', 4, 0, 0, NULL, 0, '1729814400', 'Active', 0),
+(4, 3, 1, 3, 'Zerox Blender (LG)', 'zerox-blender-lg', 19500, 20500, 8, 'Kg', 4, 1, 0, NULL, 0, '1729900800', 'Active', 0),
+(5, 3, 1, 2, 'Home Theatre (Samsung)', 'home-theatre-samsung', 16500, 18000, 6, 'Kg', 2, 0, 0, NULL, 0, '1729987200', 'Active', 0),
+(6, 7, 2, 5, 'Layers Birds', 'layers-birds', 3100, 4500, 2495, 'Kg', 100, 0, 0, NULL, 0, '1730073600', 'Active', 0),
+(7, 7, 2, 5, 'Old Layers', 'old-layers', 2050, 2300, 1818, 'Kg', 100, 0, 0, NULL, 0, '1730160000', 'Active', 0),
+(8, 8, 3, 6, 'Oraimo Power Bank', 'oraimo-power-bank', 8800, 9800, 10, 'Kg', 12, 0, 0, NULL, 0, '1730246400', 'Active', 0),
+(9, 7, 3, 6, 'Bluetooth', 'bluetooth', 4550, 6400, 70, 'Kg', 13, 0, 0, NULL, 0, '1730332800', 'Active', 0),
+(10, 5, 3, 2, 'Samsung Galaxy S3', 'samsung-galaxy-s3', 560000, 750000, 21, 'Packs', 4, 0.5, 0, NULL, 0, '1730419200', 'Active', 0),
+(11, 7, 1, 3, 'Hisense LED Smart TV', 'hisense-led-smart-tv', 155000, 170000, 9, 'Carton', 3, 0.5, 0, NULL, 0, '1730505600', 'Active', 0),
 (12, 5, 1, 6, 'Oraimo Spacebuds', 'oraimo-spacebuds', 53000, 65000, 14, 'Packs', 2, 0, 0, NULL, 0, '1730523970', 'Active', 0),
 (13, 12, 4, 7, 'Spanish Vegetables', 'spanish-vegetables', 1500, 2300, 0, 'Bundles', 2, 0, 0, '2024-11-05 11:11:00', 0, '1730529536', 'Inactive', 0),
 (14, 12, 4, 7, 'Tomatoe Paste', 'tomatoe-paste', 1200, 1243.75, 0, 'Pack', 3, 0, 0.5, '2024-11-03 15:07:00', 0, '1730631590', 'Inactive', 0),
@@ -676,11 +678,11 @@ CREATE TABLE `product_brands` (
 --
 
 INSERT INTO `product_brands` (`product_brand_id`, `product_brand_name`, `product_brand_slug`, `product_brand_created_at`, `product_brand_status`) VALUES
-(2, 'Samsung', 'samsung', '1654710124', 'Active'),
-(3, 'LG', 'lg', '1654710272', 'Active'),
-(4, 'Infinix', 'infinix', '1654710279', 'Active'),
-(5, 'Layers', 'layers', '1656291515', 'Active'),
-(6, 'Oraimo', 'oraimo', '1657124367', 'Active'),
+(2, 'Samsung', 'samsung', '1728000000', 'Active'),
+(3, 'LG', 'lg', '1728086400', 'Active'),
+(4, 'Infinix', 'infinix', '1728172800', 'Active'),
+(5, 'Layers', 'layers', '1728259200', 'Active'),
+(6, 'Oraimo', 'oraimo', '1728345600', 'Active'),
 (7, 'Spanish Vegies', 'spanish-vegies', '1730528901', 'Active'),
 (8, 'BIC', 'bic', '1730762681', 'Active'),
 (9, 'HB', 'hb', '1730762696', 'Active');
@@ -704,9 +706,9 @@ CREATE TABLE `product_categories` (
 --
 
 INSERT INTO `product_categories` (`product_category_id`, `product_category_name`, `product_category_slug`, `product_category_created_at`, `product_category_status`) VALUES
-(1, 'Electronics', 'electronics', '1654698295', 'Active'),
-(2, 'Farm Produce', 'farm-produce', '1656291450', 'Active'),
-(3, 'Phone Accessories', 'phone-accessories', '1657124357', 'Active'),
+(1, 'Electronics', 'electronics', '1727740800', 'Active'),
+(2, 'Farm Produce', 'farm-produce', '1727827200', 'Active'),
+(3, 'Phone Accessories', 'phone-accessories', '1727913600', 'Active'),
 (4, 'Groceries', 'groceries', '1730528847', 'Active'),
 (5, 'Stationery', 'stationery', '1730762347', 'Active');
 
@@ -732,11 +734,11 @@ CREATE TABLE `purchase_orders` (
 --
 
 INSERT INTO `purchase_orders` (`purchase_order_id`, `store_id`, `ordered_by`, `purchase_order_uuid`, `company_name`, `purchase_order_total_amount`, `purchase_order_timestamp`, `purchase_order_status`) VALUES
-(5, 1, 1, 'd6b16e5a-c5c5-4d00-a667-f9e2e85eb788', 'Anaedo Agro Services Ltd.', 1498200, '1655389468', 'Paid'),
-(6, 3, 1, 'c22df303-a05e-4c47-af7d-63071e3fb1d7', 'Anaedo Agro Services Ltd.', 284000, '1655389661', 'Paid'),
-(7, 7, 1, '14eb87b4-85d7-4eac-8091-b573e6bac055', 'Anaedo Agro Services Ltd.', 4800000, '1656292059', 'Paid'),
-(8, 7, 4, '562d694c-dadb-44ae-9d81-9b90c9b84484', 'Slot', 12800, '1657676324', 'Paid'),
-(9, 10, 1, '818549e8-3bf2-4d09-9d15-3664a196f6e8', 'Anaedo Agro Services Ltd.', 384000, '1665716774', 'Paid'),
+(5, 1, 1, 'd6b16e5a-c5c5-4d00-a667-f9e2e85eb788', 'Anaedo Agro Services Ltd.', 1498200, '1727740800', 'Paid'),
+(6, 3, 1, 'c22df303-a05e-4c47-af7d-63071e3fb1d7', 'Anaedo Agro Services Ltd.', 284000, '1727827200', 'Paid'),
+(7, 7, 1, '14eb87b4-85d7-4eac-8091-b573e6bac055', 'Anaedo Agro Services Ltd.', 4800000, '1727913600', 'Paid'),
+(8, 7, 4, '562d694c-dadb-44ae-9d81-9b90c9b84484', 'Slot', 12800, '1728000000', 'Paid'),
+(9, 10, 1, '818549e8-3bf2-4d09-9d15-3664a196f6e8', 'Anaedo Agro Services Ltd.', 384000, '1728086400', 'Paid'),
 (10, 7, 4, 'c1ececd5-6146-433b-97b9-63845ad35b85', 'Market Square', 360000, '1730524917', 'Paid'),
 (11, 13, 1, '83ce5c52-976c-4748-91b4-bb542e017a6d', 'Nonso & Sons', 34, '1730765560', 'Paid');
 
@@ -792,13 +794,13 @@ CREATE TABLE `stores` (
 --
 
 INSERT INTO `stores` (`store_id`, `store_name`, `store_slug`, `store_address`, `store_logo`, `store_created_at`, `store_status`) VALUES
-(1, 'Main Shop', 'main-shop', '#1 Agulu Street Umuahia Abia State', '1664198178.jpg', '1653884369', 'Active'),
-(3, 'Kubwa Mega Store', 'kubwa-mega-store', '#34 Mega Station Layout Kubwa Phase II Abuja', '1664198152.jpg', '1654018881', 'Active'),
-(5, 'Ogbete Store', 'ogbete-store', 'Ogbete Market Enugu, Nigeria', '1664198125.jpg', '1654018988', 'Active'),
-(7, 'Onitsha Store', 'onitsha-store', 'Owelle Rd Off Ochanga, Onitsha Anambra State', '1663920428.jpg', '1656290908', 'Active'),
-(8, 'Transekulu store', 'transekulu-store', 'Transekulu Enugu North, Enugu Nigeria', '1663920390.jpg', '1657124323', 'Active'),
-(9, 'Ahia Ohuru Store', 'ahia-ohuru-store', 'Ahia Ohuru Market, Aba', '1664198080.jpg', '1663917537', 'Active'),
-(10, 'Ahieke Store', 'ahieke-store', 'Ahiaeke Umuahia', '1664198223.jpg', '1664198223', 'Active'),
+(1, 'Main Shop', 'main-shop', '#1 Agulu Street Umuahia Abia State', '1664198178.jpg', '1728950400', 'Active'),
+(3, 'Kubwa Mega Store', 'kubwa-mega-store', '#34 Mega Station Layout Kubwa Phase II Abuja', '1664198152.jpg', '1729036800', 'Active'),
+(5, 'Ogbete Store', 'ogbete-store', 'Ogbete Market Enugu, Nigeria', '1664198125.jpg', '1729123200', 'Active'),
+(7, 'Onitsha Store', 'onitsha-store', 'Owelle Rd Off Ochanga, Onitsha Anambra State', '1663920428.jpg', '1729209600', 'Active'),
+(8, 'Transekulu store', 'transekulu-store', 'Transekulu Enugu North, Enugu Nigeria', '1663920390.jpg', '1729296000', 'Active'),
+(9, 'Ahia Ohuru Store', 'ahia-ohuru-store', 'Ahia Ohuru Market, Aba', '1664198080.jpg', '1729382400', 'Active'),
+(10, 'Ahieke Store', 'ahieke-store', 'Ahiaeke Umuahia', '1664198223.jpg', '1729468800', 'Active'),
 (12, 'Jabi Mall', 'jabi-mall', 'Jabi FCT', '1730528703.jpg', '1730528685', 'Active'),
 (13, 'Hempstead', 'hempstead', '#750 Walmart Road Hemstead', '1730761913.jpg', '1730761913', 'Active');
 
@@ -854,32 +856,32 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`transaction_id`, `store_id`, `entered_by`, `transaction_type`, `transaction_mode`, `transaction_title`, `transacted_by`, `transaction_recipient`, `transaction_remarks`, `transaction_uuid`, `transaction_timestamp`, `teller_no`, `bank`, `expected_amount`, `transacted_amount`, `balance`, `transaction_status`) VALUES
-(19, 5, 1, 'Income', 'Cash Payment', 'Sales', 'Ekene Omera', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'fdac7388-8e2b-4e63-a36b-652fc451e8b7', '1655388559', NULL, NULL, 440000, 440000, 0, 'Completed'),
-(21, 3, 1, 'Income', 'Bank Transfer', 'Sales', 'Ekene Omera', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '89efc21a-7316-4cef-a964-d6e28ea925ba', '1655389318', NULL, NULL, 325500, 326000, -500, 'Completed'),
-(22, 3, 1, 'Income', 'Cash Payment', 'Sales', 'Uchechukwu Udo', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '3f97f486-1144-4c7d-aa73-f23b62800b92', '1655389365', NULL, NULL, 38500, 39000, -500, 'Completed'),
-(23, 1, 1, 'Expenditure', 'Others', 'Purchases', 'Uzigbo Farms & Agro Services Ltd.', 'Anaedo Agro Services Ltd.', 'Expenditure From Purchases', 'd6b16e5a-c5c5-4d00-a667-f9e2e85eb788', '1655389468', NULL, NULL, 1498200, 1498200, 0, 'Completed'),
-(24, 3, 1, 'Expenditure', 'Others', 'Purchases', 'Uzigbo Farms & Agro Services Ltd.', 'Anaedo Agro Services Ltd.', 'Expenditure From Purchases', 'c22df303-a05e-4c47-af7d-63071e3fb1d7', '1655389661', NULL, NULL, 284000, 284000, 0, 'Completed'),
-(25, 7, 1, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '1cb8eae6-5159-4e85-b365-a8c16ae496a2', '1656291824', NULL, NULL, 22500, 23000, -500, 'Completed'),
-(26, 7, 1, 'Income', 'Bank Transfer', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '0bd6acfe-a619-4f7e-9829-3009eaec78c9', '1656291893', NULL, NULL, 9000, 9000, 0, 'Completed'),
-(27, 7, 1, 'Expenditure', 'Others', 'Purchases', '', 'Anaedo Agro Services Ltd.', 'Expenditure From Purchases', '14eb87b4-85d7-4eac-8091-b573e6bac055', '1656292059', NULL, NULL, 4800000, 4800000, 0, 'Completed'),
-(28, 7, 1, 'Income', 'Cash Payment', 'Debeaking For Udunna Farms Ltd', '', 'Uzigbuo Farms & Agro Services', 'Paid Complete', 'bb4640d7-f582-41bb-8088-f1bf6eafbab1', '1656292352', NULL, NULL, 450000, 450000, 0, 'Completed'),
-(29, 7, 1, 'Expenditure', 'Bank Transfer', 'Purchase of Diesel Generator for Pen W', '', 'Chudi & Sons LTD', 'Paid complete', '0b78afae-4e5c-4112-92d5-09c0c5e5cbe0', '1656292447', NULL, NULL, 5600, 5600, 0, 'Completed'),
-(31, 7, 4, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '395a072b-9a7c-44c8-9154-4221cad05175', '1656327421', '', '', 6900, 7000, -100, 'Completed'),
-(32, 7, 6, 'Income', 'Bank Transfer', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'de654344-5207-405a-ae3e-9a2a49e037d4', '1656536856', NULL, NULL, 529000, 529000, 0, 'Completed'),
-(33, 8, 1, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '9c239985-e039-4197-806a-e160adffdfa2', '1657124559', NULL, NULL, 117600, 120000, -2400, 'Completed'),
-(34, 7, 4, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '57bd04ef-483b-4084-a703-5459e88ba6fe', '1657676217', NULL, NULL, 15100, 16000, -900, 'Completed'),
-(35, 7, 4, 'Expenditure', 'Others', 'Purchases', '', 'Slot', 'Expenditure From Purchases', '562d694c-dadb-44ae-9d81-9b90c9b84484', '1657676324', NULL, NULL, 12800, 12800, 0, 'Completed'),
-(36, 7, 7, 'Income', 'Bank Transfer', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'fb6024a8-76d1-4acc-b331-dd82427ef0f6', '1657677413', NULL, NULL, 32000, 32000, 0, 'Completed'),
-(37, 8, 1, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'e1933b4b-3e0c-46ec-adef-0ec617b49a07', '1658627484', NULL, NULL, 9800, 9800, 0, 'Completed'),
-(38, 8, 1, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '24371b7c-df97-4749-9ab0-ef5f656a4b81', '1658628048', NULL, NULL, 19600, 20000, -400, 'Completed'),
-(39, 7, 7, 'Income', 'Card Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'b59155c0-cfa4-47c2-98fc-b5cab5dd8ff0', '1665142846', NULL, NULL, 6470, 6500, -30, 'Completed'),
-(56, 5, 1, 'Income', 'Cash Payment', 'Sales', 'Udo Uchechukwu', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'cbec96a3-f456-4ffd-85cf-985866c3fc53', '1665680904', NULL, NULL, 753750, 755000, -1250, 'Completed'),
-(57, 5, 1, 'Income', 'Card Payment', 'Sales', 'Udo Uchechukwu', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'ad9679e9-df56-4eaf-bbab-69407631198a', '1665681313', NULL, NULL, 753750, 755000, -1250, 'Completed'),
-(58, 5, 1, 'Income', 'Cash Payment', 'Sales', 'Udo Uchechukwu', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '0b61e60b-c362-4e73-add9-808a7643da92', '1665682224', NULL, NULL, 753750, 755000, -1250, 'Completed'),
-(59, 5, 1, 'Income', 'Card Payment', 'Sales', 'Udo Uchechukwu', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '4d6e7a8b-fd58-4353-add2-95788813fedc', '1665713614', NULL, NULL, 753750, 755000, -1250, 'Completed'),
-(60, 10, 1, 'Expenditure', 'Others', 'Purchases', '', 'Anaedo Agro Services Ltd.', 'Expenditure From Purchases', '818549e8-3bf2-4d09-9d15-3664a196f6e8', '1665716774', NULL, NULL, 384000, 384000, 0, 'Completed'),
-(61, 7, 4, 'Income', 'Card Payment', 'Sales', 'Okengwu Donald', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '21980253-1432-4176-a9b3-c5c6e12bb6de', '1665718522', NULL, NULL, 340850, 341000, 150, 'Completed'),
-(62, 7, 8, 'Income', 'Cash Payment', 'Sales', 'Ukamaka Emenike', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'ef66baff-ba46-4d5d-82e2-e3c5ac7fd4e3', '1665719643', NULL, NULL, 170850, 171000, 150, 'Completed'),
+(19, 5, 1, 'Income', 'Cash Payment', 'Sales', 'Ekene Omera', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'fdac7388-8e2b-4e63-a36b-652fc451e8b7', '1727740800', NULL, NULL, 440000, 440000, 0, 'Completed'),
+(21, 3, 1, 'Income', 'Bank Transfer', 'Sales', 'Ekene Omera', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '89efc21a-7316-4cef-a964-d6e28ea925ba', '1727827200', NULL, NULL, 325500, 326000, -500, 'Completed'),
+(22, 3, 1, 'Income', 'Cash Payment', 'Sales', 'Uchechukwu Udo', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '3f97f486-1144-4c7d-aa73-f23b62800b92', '1727913600', NULL, NULL, 38500, 39000, -500, 'Completed'),
+(23, 1, 1, 'Expenditure', 'Others', 'Purchases', 'Uzigbo Farms & Agro Services Ltd.', 'Anaedo Agro Services Ltd.', 'Expenditure From Purchases', 'd6b16e5a-c5c5-4d00-a667-f9e2e85eb788', '1728000000', NULL, NULL, 1498200, 1498200, 0, 'Completed'),
+(24, 3, 1, 'Expenditure', 'Others', 'Purchases', 'Uzigbo Farms & Agro Services Ltd.', 'Anaedo Agro Services Ltd.', 'Expenditure From Purchases', 'c22df303-a05e-4c47-af7d-63071e3fb1d7', '1728086400', NULL, NULL, 284000, 284000, 0, 'Completed'),
+(25, 7, 1, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '1cb8eae6-5159-4e85-b365-a8c16ae496a2', '1728172800', NULL, NULL, 22500, 23000, -500, 'Completed'),
+(26, 7, 1, 'Income', 'Bank Transfer', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '0bd6acfe-a619-4f7e-9829-3009eaec78c9', '1728259200', NULL, NULL, 9000, 9000, 0, 'Completed'),
+(27, 7, 1, 'Expenditure', 'Others', 'Purchases', '', 'Anaedo Agro Services Ltd.', 'Expenditure From Purchases', '14eb87b4-85d7-4eac-8091-b573e6bac055', '1728345600', NULL, NULL, 4800000, 4800000, 0, 'Completed'),
+(28, 7, 1, 'Income', 'Cash Payment', 'Debeaking For Udunna Farms Ltd', '', 'Uzigbuo Farms & Agro Services', 'Paid Complete', 'bb4640d7-f582-41bb-8088-f1bf6eafbab1', '1728345600', NULL, NULL, 450000, 450000, 0, 'Completed'),
+(29, 7, 1, 'Expenditure', 'Bank Transfer', 'Purchase of Diesel Generator for Pen W', '', 'Chudi & Sons LTD', 'Paid complete', '0b78afae-4e5c-4112-92d5-09c0c5e5cbe0', '1728345600', NULL, NULL, 5600, 5600, 0, 'Completed'),
+(31, 7, 4, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '395a072b-9a7c-44c8-9154-4221cad05175', '1728432000', '', '', 6900, 7000, -100, 'Completed'),
+(32, 7, 6, 'Income', 'Bank Transfer', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'de654344-5207-405a-ae3e-9a2a49e037d4', '1728518400', NULL, NULL, 529000, 529000, 0, 'Completed'),
+(33, 8, 1, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '9c239985-e039-4197-806a-e160adffdfa2', '1728604800', NULL, NULL, 117600, 120000, -2400, 'Completed'),
+(34, 7, 4, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '57bd04ef-483b-4084-a703-5459e88ba6fe', '1728691200', NULL, NULL, 15100, 16000, -900, 'Completed'),
+(35, 7, 4, 'Expenditure', 'Others', 'Purchases', '', 'Slot', 'Expenditure From Purchases', '562d694c-dadb-44ae-9d81-9b90c9b84484', '1728777600', NULL, NULL, 12800, 12800, 0, 'Completed'),
+(36, 7, 7, 'Income', 'Bank Transfer', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'fb6024a8-76d1-4acc-b331-dd82427ef0f6', '1728864000', NULL, NULL, 32000, 32000, 0, 'Completed'),
+(37, 8, 1, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'e1933b4b-3e0c-46ec-adef-0ec617b49a07', '1728950400', NULL, NULL, 9800, 9800, 0, 'Completed'),
+(38, 8, 1, 'Income', 'Cash Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '24371b7c-df97-4749-9ab0-ef5f656a4b81', '1729036800', NULL, NULL, 19600, 20000, -400, 'Completed'),
+(39, 7, 7, 'Income', 'Card Payment', 'Sales', '', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'b59155c0-cfa4-47c2-98fc-b5cab5dd8ff0', '1729123200', NULL, NULL, 6470, 6500, -30, 'Completed'),
+(56, 5, 1, 'Income', 'Cash Payment', 'Sales', 'Udo Uchechukwu', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'cbec96a3-f456-4ffd-85cf-985866c3fc53', '1729209600', NULL, NULL, 753750, 755000, -1250, 'Completed'),
+(57, 5, 1, 'Income', 'Card Payment', 'Sales', 'Udo Uchechukwu', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'ad9679e9-df56-4eaf-bbab-69407631198a', '1729296000', NULL, NULL, 753750, 755000, -1250, 'Completed'),
+(58, 5, 1, 'Income', 'Cash Payment', 'Sales', 'Udo Uchechukwu', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '0b61e60b-c362-4e73-add9-808a7643da92', '1729382400', NULL, NULL, 753750, 755000, -1250, 'Completed'),
+(59, 5, 1, 'Income', 'Card Payment', 'Sales', 'Udo Uchechukwu', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '4d6e7a8b-fd58-4353-add2-95788813fedc', '1729468800', NULL, NULL, 753750, 755000, -1250, 'Completed'),
+(60, 10, 1, 'Expenditure', 'Others', 'Purchases', '', 'Anaedo Agro Services Ltd.', 'Expenditure From Purchases', '818549e8-3bf2-4d09-9d15-3664a196f6e8', '1729555200', NULL, NULL, 384000, 384000, 0, 'Completed'),
+(61, 7, 4, 'Income', 'Card Payment', 'Sales', 'Okengwu Donald', 'Uzuigbo Farms & Agro Services', 'Income From Sales', '21980253-1432-4176-a9b3-c5c6e12bb6de', '1729641600', NULL, NULL, 340850, 341000, 150, 'Completed'),
+(62, 7, 8, 'Income', 'Cash Payment', 'Sales', 'Ukamaka Emenike', 'Uzuigbo Farms & Agro Services', 'Income From Sales', 'ef66baff-ba46-4d5d-82e2-e3c5ac7fd4e3', '1729728000', NULL, NULL, 170850, 171000, 150, 'Completed'),
 (63, 7, 4, 'Expenditure', 'Others', 'Purchases', '', 'Market Square', 'Expenditure From Purchases', 'c1ececd5-6146-433b-97b9-63845ad35b85', '1730524917', NULL, NULL, 360000, 360000, 0, 'Completed'),
 (64, 7, 4, 'Income', 'Cash Payment', 'Refund from vendors', '', '18291721', 'This is a refund made based on the spoilt goods sold', '74c22cfe-8039-4444-8720-a1463787be74', '1730525624', NULL, NULL, 120550, 120550, 0, 'Completed'),
 (65, 7, 5, 'Income', 'Card Payment', 'Sales', 'Nchicha James', 'iStock Integrated Systems', 'Income From Sales', 'quMEDM', '1730526443', NULL, NULL, 170850, 170850, 0, 'Completed'),
@@ -923,14 +925,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `store_id`, `user_firstname`, `user_lastname`, `user_gender`, `user_email`, `user_phone`, `user_image_filename`, `user_role`, `plain_password`, `enc_password`, `user_created_at`, `write_rights`, `update_rights`, `delete_rights`, `login_rights`, `last_salt`, `last_salt_timestamp`, `last_login_timestamp`) VALUES
-(1, NULL, 'Uchechukwu', 'Udo', 'Male', 'udoigweuchechukwu@gmail.com', '08065198300', NULL, 'Super Admin', 'inventora2022', 'U2FsdGVkX19YeGjZstfSQRjHdCPM69B9mAgvEIHm4zQ=', ' 1653988383', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1731974776'),
-(2, 5, 'Chinasa', 'John', 'Female', 'chinasa@gmail.com', '09081728172', NULL, 'Admin', 'inventora2022', 'U2FsdGVkX1/sHooXfBDa0fYAXHIZJlxa8mFcvNfnqUY=', '1654664898', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1731974723'),
-(3, 3, 'Alisa', 'Pena', 'Female', 'alisapena05@gmail.com', '+4930901820', NULL, 'Admin', 'inventora2022', 'U2FsdGVkX1/JLEm4ynoVyzXIvl6iCW4REZKlyLwNEVk=', '1654667817', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, NULL),
-(4, 7, 'Donald', 'Okengwu', 'Male', 'donald@gmail.com', '09081762713', NULL, 'Admin', 'inventora2022', 'U2FsdGVkX19Uw9X2cDkQpm0jgR4ojEW7W+RfPvKtEdc=', '1656291019', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1732009252'),
-(5, 7, 'James', 'Nchicha', 'Male', 'james@gmail.com', '09089090908', NULL, 'Cashier', 'inventora2022', 'U2FsdGVkX18UaKjA+lAtMjl/2CBHCL7SgPEbVL6Hgxo=', '1656323853', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1731967251'),
-(6, 7, 'Onyinyechi', 'Nduka', 'Female', 'onyinyechi@yahoo.com', '09012819212', NULL, 'Cashier', 'inventora2022', 'U2FsdGVkX19YdKTIzyRUpS4Bp0T1pWDeMk9dYN/D9SA=', '1656323982', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1656534785'),
-(7, 7, 'Nkechi', 'Chigbu', 'Female', 'chigbu@gmail.com', '07089096545', NULL, 'Cashier', 'inventora2022', 'U2FsdGVkX18VoxyjnGUjLUq5USIyBx2BvMDSLxEoI60=', '1657675922', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1665140068'),
-(8, 7, 'Emenike', 'Ukamaka', 'Female', 'ukamaka@gmail.com', '09089090989', NULL, 'Cashier', 'inventora2022', 'U2FsdGVkX1/vs1GBTb2A7HQn8PdZLlDWoM/Xc9jRbx4=', '1665717346', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1665719407'),
+(1, NULL, 'Uchechukwu', 'Udo', 'Male', 'udoigweuchechukwu@gmail.com', '08065198300', NULL, 'Super Admin', 'inventora2022', 'U2FsdGVkX19YeGjZstfSQRjHdCPM69B9mAgvEIHm4zQ=', '1730449999', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1732121163'),
+(2, 5, 'Chinasa', 'John', 'Female', 'chinasa@gmail.com', '09081728172', NULL, 'Admin', 'inventora2022', 'U2FsdGVkX1/sHooXfBDa0fYAXHIZJlxa8mFcvNfnqUY=', '1730459999', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1731974723'),
+(3, 3, 'Alisa', 'Pena', 'Female', 'alisapena05@gmail.com', '+4930901820', NULL, 'Admin', 'inventora2022', 'U2FsdGVkX1/JLEm4ynoVyzXIvl6iCW4REZKlyLwNEVk=', '1730469999', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, NULL),
+(4, 7, 'Donald', 'Okengwu', 'Male', 'donald@gmail.com', '09081762713', NULL, 'Admin', 'inventora2022', 'U2FsdGVkX19Uw9X2cDkQpm0jgR4ojEW7W+RfPvKtEdc=', '1730479999', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1732009252'),
+(5, 7, 'James', 'Nchicha', 'Male', 'james@gmail.com', '09089090908', NULL, 'Cashier', 'inventora2022', 'U2FsdGVkX18UaKjA+lAtMjl/2CBHCL7SgPEbVL6Hgxo=', '1730489999', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1731967251'),
+(6, 7, 'Onyinyechi', 'Nduka', 'Female', 'onyinyechi@yahoo.com', '09012819212', NULL, 'Cashier', 'inventora2022', 'U2FsdGVkX19YdKTIzyRUpS4Bp0T1pWDeMk9dYN/D9SA=', '1730490000', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1656534785'),
+(7, 7, 'Nkechi', 'Chigbu', 'Female', 'chigbu@gmail.com', '07089096545', NULL, 'Cashier', 'inventora2022', 'U2FsdGVkX18VoxyjnGUjLUq5USIyBx2BvMDSLxEoI60=', '1730499999', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1665140068'),
+(8, 7, 'Emenike', 'Ukamaka', 'Female', 'ukamaka@gmail.com', '09089090989', NULL, 'Cashier', 'inventora2022', 'U2FsdGVkX1/vs1GBTb2A7HQn8PdZLlDWoM/Xc9jRbx4=', '1730500000', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1665719407'),
 (9, 5, 'Cherechi', 'Chikwado', 'Female', 'cherechi@gmail.com', '09089281928', NULL, 'Cashier', 'istock2022', 'U2FsdGVkX1/VbGtQaU0OSXTfFN5aqG2D3WDw18YrtQM=', '1730522714', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, NULL),
 (10, 12, 'Scott', 'Adkins', 'Male', 'scott@gmail.com', '09089091829', NULL, 'Admin', 'inventora2022', 'U2FsdGVkX1+yIvGFB5Iv8MhTSok1IIrveEBbrOfGrVw=', '1730528783', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1731974928'),
 (11, 13, 'Kamsi', 'Ejikeme', 'Female', 'kamsi@gmail.com', '09087878172', NULL, 'Admin', 'istock2024', 'U2FsdGVkX1/PKQJjhgadg7CX/fKbxGguUcTBPRkR5Nw=', '1730762038', 'Granted', 'Granted', 'Granted', 'Granted', NULL, NULL, '1730766749'),
@@ -1039,7 +1041,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=455;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=457;
 
 --
 -- AUTO_INCREMENT for table `invoices`
