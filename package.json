@@ -1,7 +1,7 @@
 {
-	"name": "inventora",
+	"name": "istock",
 	"version": "1.0.0",
-	"description": "An API Backend service for the INVENTORA inventory management system",
+	"description": "An API Backend service for the iSTOCK inventory management system",
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon index.js",
@@ -14,7 +14,7 @@
 		"Management",
 		"Inventora"
 	],
-	"author": "Uchechukwu Udo",
+	"author": "InnovateX Group 6",
 	"license": "MIT",
 	"dependencies": {
 		"cors": "^2.8.5",
